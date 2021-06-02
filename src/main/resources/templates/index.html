@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org/">
+<head th:replace = "fragments::head"></head>
+<header th:replace="fragments::navbar"></header>
+
+<div id="inner"></div>
+<body>
+<div th:replace="fragments::sidenav" id="mySidenav" class="sidenav"></div>
+
+<div class="body-content">
+    <h1> All Recipes</h1>
+<table style = "width:100%">
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Keywords</th>
+    </tr>
+    <tr th:each="recipe: ${recipes}">
+        <td>
+            <p>
+                <a th:text="${recipe.name}" th:href="@{'/displayRecipe/' + ${recipe.recipeId}}"></a>
+            </p>
+        </td>
+        <td>
+            <p>
+                <a th:text="${recipe.category}"></a>
+            </p>
+        </td>
+        <td>
+            <p>
+                <a th:text="${recipe.keywords}"></a>
+            </p>
+        </td>
+    </tr>
+</table>
+</div>
+
+
+<span onclick="openNav()">open</span>
+
+<div id="main">
+    ...
+</div>
+</body>
+</div>
+</html>

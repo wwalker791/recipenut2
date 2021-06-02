@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace = "fragments::head">
+    </head>
+    <header th:replace="fragments::navbar"></header>
+
+    <div id="inner"></div>
+    <body>
+    <div th:replace="fragments::sidenav" id="mySidenav" class="sidenav"></div>
+
+<div class="body-content">
+<h1>Sign up</h1>
+
+<form method="post">
+    <div class ="form-group">
+        <label>Username
+            <input class="form-control" th:field="${registerDTO.username}"/>
+        </label>
+        <p class= "error" th:errors= "${registerDTO.username}"></p>
+    </div>
+    <div class = "form-group">
+        <label>Email Address
+            <input class="form-control" th:field = "${registerDTO.email}"/>
+        </label>
+        <p class= "error" th:errors= "${registerDTO.email}"></p>
+    </div>
+    <div class="form-group">
+        <label>Password
+            <input class= "form-control" th:field="${registerDTO.password}" type="password" name="password"/>
+        </label>
+        <p class= "error" th:errors= "${registerDTO.password}"></p>
+    </div>
+    <div class = "form-group">
+        <label>Verify Password
+            <input class = "form-control" th:field="${registerDTO.verifyPassword}" type="password" name="verifyPassword"/><br><br>
+        </label>
+    </div>
+
+    <button type="submit" value="Submit">Submit</button>
+</form>
+
+<a th:href="@{/login}" >Already have an account? Login here</a>
+    </div>
+</body>
+</div>
+</html>

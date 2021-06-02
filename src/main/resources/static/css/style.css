@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    min-height: 40px;
+    width: 100%;
+    z-index: 99
+}
+
+body {
+    margin-left: 100px;
+    padding: 0;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    }
+
+.navbar {
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    background-color: #333;
+    color: #82E0AA;
+    position: relative;
+    top: 0;
+    width: 100%;
+    }
+
+.site-title {
+    font-size: 2rem;
+    margin:. 5rem;
+    margin-left: 16px;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a:hover {
+    color: #82E0AA;
+}
+
+body, html {
+    height: 100%;
+    }
+
+
+.navbar-links input[type=text] {
+border: none;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: absolute;
+    z-index: 0;
+    top: 16px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    position: fixed;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #cc6600;
+}
+
+.main {
+    margin-left: 200px;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+    }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+.body-content {
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+.recipeInput {
+    width: 550px;
+    height: 450px;
+}
+
+.recipe-list {
+    position:relative;
+    left: 400px;
+    width: 400px;
+    min-height:250px;
+    float:left;
+}
+
+.fixed-header {
+    position: fixed;
+}
+
+.search-input {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.navbar-links button {
+ float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+#inner {overflow:hidden;}

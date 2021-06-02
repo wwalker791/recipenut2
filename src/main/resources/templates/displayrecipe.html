@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org/">
+<head th:replace = "fragments::head"></head>
+<header th:replace="fragments::navbar"></header>
+
+<div id="inner"></div>
+<body>
+<div th:replace="fragments::sidenav" id="mySidenav" class="sidenav"></div>
+
+<div class="body-content">
+    <h1 th:text ="${recipe.name}"></h1>
+</div>
+
+
+<span onclick="openNav()">open</span>
+
+<div id="main">
+    ...
+</div>
+</body>
+</div>
+</html>
+
