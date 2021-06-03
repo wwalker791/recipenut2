@@ -13,7 +13,7 @@
         <div class="navbar-links">
             <ul>
                 <form th:action="@{/search}" method="get">
-                    <input type="search" name ="keyword" placeholder="Search" class="search-input" >
+                    <input type="search" id="searchInput" name ="keyword" placeholder="Search" class="search-input" >
                     <button type="submit" class="search-button" text="Search"></button>
                 </form>
                 <li><a th:href="@{/index}">Home</a></li>
@@ -30,14 +30,14 @@
 
 <body>
 <div th:fragment ="sidenav" id="mySidenav" class="sidenav">
-    <a href="#">Vegetarian</a>
-    <a href="#">Vegan</a>
-    <a href="#">Gluten-Free</a>
-    <a href="#">Paleo</a>
-    <a href="#">Starters</a>
-    <a href="#">Main Courses</a>
-    <a href="#">Sides</a>
-    <a href="#">Deserts</a>
+    <a th:href="@{/view-category/vegetarian}">Vegetarian</a>
+    <a th:href="@{/view-category/vegan}">Vegan</a>
+    <a th:href="@{/view-category/glutenFree}">Gluten-Free</a>
+    <a th:href="@{/view-category/paleo}">Paleo</a>
+    <a th:href="@{/view-category/starters}">Starters</a>
+    <a th:href="@{/view-category/mainCourses}">Main Courses</a>
+    <a th:href="@{/view-category/sides}">Sides</a>
+    <a th:href="@{/view-category/deserts}">Deserts</a>
 </div>
 
 

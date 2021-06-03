@@ -14,6 +14,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class HomeController {
@@ -56,13 +57,17 @@ public class HomeController {
         if(searchTerm.toLowerCase().equals("")){
             recipes = recipeRepository.findAll();
         } else {
-            recipes = Recipe.findBySearchTerm(searchTerm, recipeRepository.findAll());
-            model.addAttribute("title", "Recipes matching your criteria");
-        }
-        recipes = recipeRepository.findByKeywords(searchTerm);
-        model.addAttribute("recipes", recipes);
+           recipes = Recipe.findBySearchTerm(searchTerm, recipeRepository.findAll());
+           model.addAttribute("title", "Recipes matching your criteria");
 
+        }
+        model.addAttribute("recipes", recipes);
         return "search";
+    }
+
+    @GetMapping("profile")
+    public String displayProfile(Model model, @RequestParam User user) {
+        return "profile";
     }
 
 }

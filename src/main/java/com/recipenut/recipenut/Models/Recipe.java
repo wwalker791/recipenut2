@@ -34,104 +34,121 @@ public class Recipe {
     @NotBlank
     private String keywords;
 
-    public Recipe() {}
+    public Recipe() {
+    }
 
     public Recipe(int recipeId, String name, User user, String ingredientList, String preparation,
                   String keywords, String category, String imageFile) {
         this.recipeId = recipeId;
-        this.name= name;
+        this.name = name;
         this.user = user;
-        this.ingredientList= ingredientList;
-        this.preparation= preparation;
-        this.keywords=keywords;
-        this.category=category;
-        this.imageFile=imageFile;
-    }
-
-
-    public static ArrayList<Recipe> findBySearchTerm(String searchTerm, Iterable<Recipe> allRecipes) {
-        String lower_val = searchTerm.toLowerCase();
-
-        ArrayList<Recipe> results = new ArrayList<>();
-
-
-        for (Recipe recipe : allRecipes) {
-
-            if (recipe.getName().toLowerCase().contains(lower_val)) {
-                results.add(recipe);
-            } else if (recipe.getUser().toString().toLowerCase().contains(lower_val)) {
-                results.add(recipe);
-            } else if (recipe.getIngredientList().toString().toLowerCase().contains(lower_val)) {
-                results.add(recipe);
-            } else if (recipe.getKeywords().toString().toLowerCase().contains(lower_val)) {
-                results.add(recipe);
-            } else if (recipe.getCategory().toString().toLowerCase().contains(lower_val)) {
-                results.add(recipe);
-            }
-
-        }
-
-        return results;
-    }
-
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getImageFile() {
-        return imageFile;
-    }
-
-    public void setImageFile(String imageFile) {
+        this.ingredientList = ingredientList;
+        this.preparation = preparation;
+        this.keywords = keywords;
+        this.category = category;
         this.imageFile = imageFile;
     }
 
-    public String getName() {
-        return name;
+    public static ArrayList<Recipe> findByCategory(Iterable<Recipe> allRecipes, String category) {
+
+        ArrayList<Recipe> categoryResults = new ArrayList<>();
+        for (Recipe recipe : allRecipes) {
+
+            String aCategory = recipe.getCategory();
+
+            if (aCategory != null && aCategory.toLowerCase().contains(category.toLowerCase())) {
+                categoryResults.add(recipe);
+            }
+        }
+        return categoryResults;
     }
 
-    public void setName(String name) {
-        this.name = name;
+
+        public static ArrayList<Recipe> findBySearchTerm (String searchTerm, Iterable < Recipe > allRecipes){
+            String lower_val = searchTerm.toLowerCase();
+
+            ArrayList<Recipe> results = new ArrayList<>();
+
+
+            for (Recipe recipe : allRecipes) {
+
+                if (recipe.getName().toLowerCase().contains(lower_val)) {
+                    results.add(recipe);
+                } else if (recipe.getUser().toString().toLowerCase().contains(lower_val)) {
+                    results.add(recipe);
+                } else if (recipe.getIngredientList().toString().toLowerCase().contains(lower_val)) {
+                    results.add(recipe);
+                } else if (recipe.getKeywords().toString().toLowerCase().contains(lower_val)) {
+                    results.add(recipe);
+                } else if (recipe.getCategory().toString().toLowerCase().contains(lower_val)) {
+                    results.add(recipe);
+                }
+
+            }
+
+            return results;
+        }
+
+
+        public User getUser () {
+            return user;
+        }
+
+        public void setUser (User user){
+            this.user = user;
+        }
+
+        public String getImageFile () {
+            return imageFile;
+        }
+
+        public void setImageFile (String imageFile){
+            this.imageFile = imageFile;
+        }
+
+        public String getName () {
+            return name;
+        }
+
+        public void setName (String name){
+            this.name = name;
+        }
+
+        public String getIngredientList () {
+            return ingredientList;
+        }
+
+        public void setIngredientList (String ingredientList){
+            this.ingredientList = ingredientList;
+        }
+
+        public String getPreparation () {
+            return preparation;
+        }
+
+        public void setPreparation (String preparation){
+            this.preparation = preparation;
+        }
+
+        public String getCategory () {
+            return category;
+        }
+
+        public void setCategory (String category){
+            this.category = category;
+        }
+
+        public String getKeywords () {
+            return keywords;
+        }
+
+        public void setKeywords (String keywords){
+            this.keywords = keywords;
+        }
+
+        public int getRecipeId () {
+            return recipeId;
+        }
     }
 
-    public String getIngredientList() {
-        return ingredientList;
-    }
 
-    public void setIngredientList(String ingredientList) {
-        this.ingredientList = ingredientList;
-    }
-
-    public String getPreparation() {
-        return preparation;
-    }
-
-    public void setPreparation(String preparation) {
-        this.preparation = preparation;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getKeywords() {
-        return keywords;
-    }
-
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
-    }
-
-    public int getRecipeId() {
-        return recipeId;
-    }
-}

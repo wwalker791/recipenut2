@@ -11,12 +11,22 @@
 <div class="body-content">
     <h1>Search results</h1>
    <table>
-       <tr th:each="recipe : ${recipe}"></tr>
+       <tr th:each="recipe : ${recipes}"></tr>
         <td>
             <p>
-                <a th:text="${recipe.name}"></a>
+                <a th:text="${recipes.name}"></a>
             </p>
         </td>
+       <td>
+           <p>
+               <a th:text="${recipes.user}"></a>
+           </p>
+       </td>
+       <td>
+           <p>
+               <a th:text="${recipes.category}"></a>
+           </p>
+       </td>
    </table>
 </div>
 </body>
